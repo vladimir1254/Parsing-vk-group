@@ -70,13 +70,11 @@ response = vk.wall.get(owner_id=group_id, count=0)
 
 count = 1#response['count']-1
 
-sdvig2 = 
+#sdvig2 = 
 sdvig = response['count']-2#11000  # 11000
 offset = sdvig
 #offset = response['count'] - count
 print("Total wall posts count:", response['count'])
-# 30917
-#-----------------------------------------
 
 
 
@@ -86,8 +84,6 @@ wall = []
 all_need = 3
 while True:
     response = vk.wall.get(owner_id=group_id, count=count, offset=offset)
-   # print(response)
-   # print('===========================================')
     print(all_need+sdvig,offset)
     if response['items'] and offset<=all_need+sdvig:
         wall.extend(response['items'])
